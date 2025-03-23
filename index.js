@@ -3,7 +3,7 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource, NoSubscriberBe
 const { exec } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-
+require('dotenv').config();
 // Initialize the bot
 const client = new Client({
   intents: [
@@ -114,4 +114,4 @@ client.on('messageCreate', async (message) => {
 });
 
 // Login to Discord using the bot token
-client.login('MTM1MzIyMDk3NzY4NDc3NDk5NA.G6xIej.P1k8pZZjLpgq7nexe9tngLHBOEUAhcexXb_B-Y');
+client.login(process.env.DISCORD_TOKEN);
